@@ -26,6 +26,8 @@ namespace Http {
 		std::optional<Type> m_type;
 	};
 
-}
+};
+
+std::ostream& operator<<(std::ostream& os, const Http::Address::AddrFamily& value);
 
 #endif //HTTP_REQUESTS_ADDRESS_H

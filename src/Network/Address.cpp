@@ -2,6 +2,7 @@
 #include <netdb.h>
 #include <cstring>
 #include <arpa/inet.h>
+#include <iostream>
 
 using namespace Http;
 
@@ -63,4 +64,17 @@ bool Address::make_address(Address &address) {
 	}
 
 	return true;
+}
+
+std::ostream& operator<<(std::ostream& os, const Http::Address::AddrFamily& value) {
+	switch (value) {
+		case Http::Address::AddrFamily::IpV4:
+			os << "IPv4";
+			break;
+		case Http::Address::AddrFamily::IpV6:
+			os << "IPv6";
+			break;
+	}
+
+	return os;
 }

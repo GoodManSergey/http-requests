@@ -6,7 +6,7 @@
 class Socket {
 public:
 	virtual ~Socket() = default;
-	static virtual std::unique_ptr<Socket> create(const Http::Address& address);
+	static std::unique_ptr<Socket> create(const Http::Address& address);
 
 	virtual bool connect() = 0;
 };

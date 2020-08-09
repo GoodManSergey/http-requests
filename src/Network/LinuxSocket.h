@@ -12,7 +12,7 @@ class LinuxSocket: public Socket {
 public:
 	~LinuxSocket() override = default;
 	bool connect() override;
-	static std::unique_ptr<Socket> create(const Http::Address& addr) override;
+	static std::unique_ptr<Socket> create(const Http::Address& addr);
 
 private:
 	LinuxSocket() = default;
